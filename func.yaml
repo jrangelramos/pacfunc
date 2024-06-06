@@ -1,4 +1,13 @@
 specVersion: 0.36.0
 name: pacfunc
 runtime: node
+registry: image-registry.openshift-image-registry.svc:5000/userproject
+namespace: pacfunc
 created: 2024-05-23T17:55:54.290122742-03:00
+build:
+  git:
+    url: https://github.com/jrangelramos/pacfunc
+    revision: main
+  builder: s2i
+deploy:
+  image: image-registry.openshift-image-registry.svc:5000/userproject/pacfunc:latest
